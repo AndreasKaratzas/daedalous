@@ -1,0 +1,16 @@
+conda create --name daedalous python=3.8 pip
+conda activate daedalous
+conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+pip install opencv-python
+python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+conda install -c conda-forge gym
+pip install msgpack-rpc-python
+pip install airsim
+git clone https://github.com/AndreasKaratzas/daedalous.git
+mv daedalous rainbow
+cd rainbow
+pip install -e gym-daedalous
+git clone https://github.com/Microsoft/AirSim.git
+cd AirSim
+./setup.sh
+./build.sh
