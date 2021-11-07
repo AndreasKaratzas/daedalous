@@ -7,7 +7,7 @@ from src.functions import *
 
 
 def train(env, daedalous, logger):
-    
+
     # Agent training loop
     for e in range(EPISODES):
 
@@ -45,13 +45,10 @@ def train(env, daedalous, logger):
             state = next_state
 
         logger.log_episode()
-                    
+
         if e % VERBOSITY == 0 and e > 0:
-            logger.record(
-                episode=e,
-                step=daedalous.curr_step
-            )
-        
+            logger.record(episode=e, step=daedalous.curr_step)
+
         torch.cuda.empty_cache()
         gc.collect()
 

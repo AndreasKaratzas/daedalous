@@ -13,7 +13,7 @@ def test(env, daedalous):
     for target in targets:
 
         state = env.reset(target)
-        
+
         done = False
         score = 0
 
@@ -42,7 +42,7 @@ def test(env, daedalous):
             # 8. Update mission status
             if done:
                 mission_status.append(True if score > 100 else False)
-        
+
     # env.close()
 
     # Output test results

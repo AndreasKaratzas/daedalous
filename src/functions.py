@@ -76,8 +76,14 @@ def create_data_dir(export_data_path):
 
 def get_last_chkpt(data_path, fixed_datetime, overwrite=False, load_model_chkpt=False, load_memory_chkpt=False):
     chkpt_datetime_dir = fixed_datetime if overwrite else get_chkpt_datetime(data_path)
-    model_checkpoint = None if not load_model_chkpt else data_path / chkpt_datetime_dir / "model"
-    mem_checkpoint = None if not load_memory_chkpt else data_path / chkpt_datetime_dir / "memory"
+    model_checkpoint = Path(data_path / chkpt_datetime_dir / "model")
+    mem_checkpoint = Path(data_path / chkpt_datetime_dir / "memory")
+
+    if not model_checkpoint.is_file():
+        model_checkpoint = None
+    if not mem_checkpoint.is_file():
+        mem_checkpoint = None
+        
     return model_checkpoint, mem_checkpoint
 
 def experiment_data_plots(export_data_dir, datetime_tag):
