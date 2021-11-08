@@ -43,3 +43,4 @@ Tested under Windows 10 OS.
 # TODOs
 
 1. Add test mode.
+2. Add explainability using [TruLens](https://www.trulens.org/?fbclid=IwAR2ZMGETnpzAj2Nxt9RVmGrSxDDGkb3kaMsIgHJqRZ4aNqH5t4gATsBTfw4)
