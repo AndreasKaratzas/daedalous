@@ -184,12 +184,9 @@ class Daedalous:
         state = torch.FloatTensor(samples["obs"]).to(self.device)
         next_state = torch.FloatTensor(samples["next_obs"]).to(self.device)
         action = torch.LongTensor(samples["acts"]).to(self.device)
-        reward = torch.FloatTensor(
-            samples["rews"].reshape(-1, 1)).to(self.device)
-        done = torch.FloatTensor(
-            samples["done"].reshape(-1, 1)).to(self.device)
-        weights = torch.FloatTensor(
-            samples["weights"].reshape(-1, 1)).to(self.device)
+        reward = torch.FloatTensor(samples["rews"].reshape(-1, 1)).to(self.device)
+        done = torch.FloatTensor(samples["done"].reshape(-1, 1)).to(self.device)
+        weights = torch.FloatTensor(samples["weights"].reshape(-1, 1)).to(self.device)
 
         indices = samples["indices"]
         return state, action, reward, next_state, done, weights, indices
