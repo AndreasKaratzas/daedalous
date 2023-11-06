@@ -62,7 +62,7 @@ class Daedalous:
         self.priority_replay = PrioritizedReplayBuffer(
             env.observation_space.shape[0],
             int(5e4), memory_save_dir, 32,
-            alpha=0.4, n_step=3, gamma=0.99)
+            alpha=0.4, n_step=1, gamma=0.99)
 
         # Memory for N-step Learning
         self.use_n_step = True if 3 > 1 else False
