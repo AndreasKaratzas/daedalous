@@ -28,7 +28,7 @@ class PrioritizedReplayBuffer(ReplayBuffer):
         Gamma parameter of multi-step learning algorithm.
     """
 
-    def __init__(self, obs_dim, size, save_dir, batch_size, alpha, n_step, gamma):
+    def __init__(self, obs_dim, size, save_dir, batch_size, alpha, n_step=1, gamma=0.99):
         assert alpha >= 0
 
         super(PrioritizedReplayBuffer, self).__init__(
